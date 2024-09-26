@@ -38,7 +38,6 @@ class App {
 
 
 
-    // 1.2. Inicializar el código de la librería (Matter.js)
     initPhysics() {
         console.log(Matter)
 
@@ -64,7 +63,7 @@ class App {
 
     initBodies() {
         var bodies = [];
-        var totalCircles = 220;
+        var totalCircles = 20;
         var layoutRadius = 250;
 
         for (let i = 0; i < totalCircles; i++) {
@@ -94,10 +93,8 @@ class App {
 }
 
 
-// 1.3. Configurar nuestro propio "request animation frame" por si lo necesitamos más adelante
 function frame() {
     console.log("custom animation frame interval");
-    // El código que quisiéramos animar o actualizar a 60 fps iria aquí dentro
 
     requestAnimationFrame(frame);
 }
@@ -106,7 +103,7 @@ function frame() {
 
 
 
-// 2. Inicializar nuestro código
+// Inicializar nuestro código
 var myApp;
 
 window.onload = function() {

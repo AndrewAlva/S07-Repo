@@ -48,10 +48,11 @@ class App {
             engine: this.engine,
             canvas: this.canvas,
             options: {
-                showPerformance: true,
                 showDebug: true,
+                showPerformance: true,
                 width: this.canvas.width,
                 height: this.canvas.height,
+                wireframes: false,
             }
         });
 
@@ -63,8 +64,8 @@ class App {
 
     initBodies() {
         var bodies = [];
-        var totalCircles = 20;
-        var layoutRadius = 250;
+        var totalCircles = 150;
+        var layoutRadius = 10;
 
         for (let i = 0; i < totalCircles; i++) {
             let stepPI = PI2 / totalCircles;
@@ -76,6 +77,10 @@ class App {
                 30,  // width
                 30 // height
             );
+            // Matter.Body.setMass(circle, 1 / i);
+            Matter.Body.setDensity(circle, i * 50);
+            console.log("circle mass", circle.density);
+            
             bodies.push(circle);
         }
 

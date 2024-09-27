@@ -7,6 +7,13 @@
     2. Inicializar nuestro código
 */
 
+// 1.3. Configurar nuestro propio "request animation frame" por si lo necesitamos más adelante
+function frame() {
+    console.log("custom animation frame interval");
+    // El código que quisiéramos animar o actualizar a 60 fps iria aquí dentro
+
+    requestAnimationFrame(frame);
+}
 
 // 1. Crear la arquitectura de nuestro sitio / aplicación
 class App {
@@ -119,13 +126,6 @@ class App {
 }
 
 
-// 1.3. Configurar nuestro propio "request animation frame" por si lo necesitamos más adelante
-function frame() {
-    console.log("custom animation frame interval");
-    // El código que quisiéramos animar o actualizar a 60 fps iria aquí dentro
-
-    requestAnimationFrame(frame);
-}
 
 
 
